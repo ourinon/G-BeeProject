@@ -1,5 +1,6 @@
 package com.example.demo.Test;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,7 @@ public class TestController {
 	
 	@GetMapping("")
 	public String ServerTest() {
-		return "서버 실행 정상!";
+		return "index";
 	}
 
 }
