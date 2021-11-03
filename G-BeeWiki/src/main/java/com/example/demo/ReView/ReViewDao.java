@@ -4,25 +4,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
 
 @Repository
 public class ReViewDao {
+	
+	public ReViewDto dto1;
 	
 	public static List<ReViewDto> reviews;
 	
 	static {
 		reviews = new ArrayList();
 		
-		reviews.add(new ReViewDto(1, "´ë»ó1", "ÀÛ¼ºÀÚ1", "¸®ºä ³»¿ë1", "Æò°¡ Ç×¸ñ1"));
-		reviews.add(new ReViewDto(2, "´ë»ó2", "ÀÛ¼ºÀÚ2", "¸®ºä ³»¿ë2", "Æò°¡ Ç×¸ñ2"));
-		reviews.add(new ReViewDto(3, "´ë»ó3", "ÀÛ¼ºÀÚ3", "¸®ºä ³»¿ë3", "Æò°¡ Ç×¸ñ3"));
-		reviews.add(new ReViewDto(4, "´ë»ó4", "ÀÛ¼ºÀÚ4", "¸®ºä ³»¿ë4", "Æò°¡ Ç×¸ñ4"));
-		reviews.add(new ReViewDto(5, "´ë»ó5", "ÀÛ¼ºÀÚ5", "¸®ºä ³»¿ë5", "Æò°¡ Ç×¸ñ5"));
+		reviews.add(new ReViewDto(1, "ï¿½ï¿½ï¿½1", "ï¿½Û¼ï¿½ï¿½ï¿½1", "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½1", "ï¿½ï¿½ ï¿½×¸ï¿½1"));
+		reviews.add(new ReViewDto(2, "ï¿½ï¿½ï¿½2", "ï¿½Û¼ï¿½ï¿½ï¿½2", "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½2", "ï¿½ï¿½ ï¿½×¸ï¿½2"));
+		reviews.add(new ReViewDto(3, "ï¿½ï¿½ï¿½3", "ï¿½Û¼ï¿½ï¿½ï¿½3", "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½3", "ï¿½ï¿½ ï¿½×¸ï¿½3"));
+		reviews.add(new ReViewDto(4, "ï¿½ï¿½ï¿½4", "ï¿½Û¼ï¿½ï¿½ï¿½4", "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4", "ï¿½ï¿½ ï¿½×¸ï¿½4"));
+		reviews.add(new ReViewDto(5, "ï¿½ï¿½ï¿½5", "ï¿½Û¼ï¿½ï¿½ï¿½5", "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½5", "ï¿½ï¿½ ï¿½×¸ï¿½5"));
 		
 	}
 	
 	public List<ReViewDto> getAllReviews() {
 		return reviews;
 	}
+	
+	public List<ReViewDto> getReviewById(int reviewId) {
+		return null;
+	}
+	
+	public List<ReViewDto> insertReview(ReViewDto dto) {
+		return null;
+	}
+
+	public List<ReViewDto> updateReview(int reviewId, ReViewDto dto) {
+		return null;
+	}
+
+	public List<ReViewDto> deleteReview(int reviewId) {
+		return null;
+	}
+
 
 }

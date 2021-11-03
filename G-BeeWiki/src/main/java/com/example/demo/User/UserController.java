@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,16 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 	
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userService;
 	
-	@GetMapping("") // ¸ğµç À¯Àú
+	@GetMapping("") // ëª¨ë“  ìœ ì €
 	public List<UserDto> getAllUsers() {
 		return userService.getAllUsers();
 	}
 	
-	@GetMapping("/teacher") // ¸ğµç ¼±»ı´Ô
+	@GetMapping("/teacher") // ëª¨ë“  ì„ ìƒë‹˜
 	public List<TeacherDto> getAllTeachers() {
 		return userService.getAllTeachers();
 	}
+	
 
 }

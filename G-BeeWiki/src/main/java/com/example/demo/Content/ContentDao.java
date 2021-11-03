@@ -15,31 +15,31 @@ public class ContentDao {
 	static {
 		evals = new ArrayList();
 		
-		evals.add(new EvaluationDto(1, "³»¿ë1"));
-		evals.add(new EvaluationDto(2, "³»¿ë2"));
-		evals.add(new EvaluationDto(3, "³»¿ë3"));
-		evals.add(new EvaluationDto(4, "³»¿ë4"));
-		evals.add(new EvaluationDto(5, "³»¿ë5"));
+		evals.add(new EvaluationDto(1, "ï¿½ï¿½ï¿½ï¿½1"));
+		evals.add(new EvaluationDto(2, "ï¿½ï¿½ï¿½ï¿½2"));
+		evals.add(new EvaluationDto(3, "ï¿½ï¿½ï¿½ï¿½3"));
+		evals.add(new EvaluationDto(4, "ï¿½ï¿½ï¿½ï¿½4"));
+		evals.add(new EvaluationDto(5, "ï¿½ï¿½ï¿½ï¿½5"));
 	}
 	
 	static {
 		subjects = new ArrayList();
 		
-		subjects.add(new SubjectDto("°ú¸ñ ÀÌ¸§1", "°ú¸ñ³»¿ë1"));
-		subjects.add(new SubjectDto("°ú¸ñ ÀÌ¸§2", "°ú¸ñ³»¿ë2"));
-		subjects.add(new SubjectDto("°ú¸ñ ÀÌ¸§3", "°ú¸ñ³»¿ë3"));
-		subjects.add(new SubjectDto("°ú¸ñ ÀÌ¸§4", "°ú¸ñ³»¿ë4"));
-		subjects.add(new SubjectDto("°ú¸ñ ÀÌ¸§5", "°ú¸ñ³»¿ë5"));
+		subjects.add(new SubjectDto("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½1", "ï¿½ï¿½ï¿½ñ³»¿ï¿½1"));
+		subjects.add(new SubjectDto("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½2", "ï¿½ï¿½ï¿½ñ³»¿ï¿½2"));
+		subjects.add(new SubjectDto("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½3", "ï¿½ï¿½ï¿½ñ³»¿ï¿½3"));
+		subjects.add(new SubjectDto("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½4", "ï¿½ï¿½ï¿½ñ³»¿ï¿½4"));
+		subjects.add(new SubjectDto("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½5", "ï¿½ï¿½ï¿½ñ³»¿ï¿½5"));
 	}
 	
 	static {
 		agencys = new ArrayList();
 		
-		agencys.add(new AgencyDto(1, "¼Ò¼Ó ÀÌ¸§1"));
-		agencys.add(new AgencyDto(2, "¼Ò¼Ó ÀÌ¸§2"));
-		agencys.add(new AgencyDto(3, "¼Ò¼Ó ÀÌ¸§3"));
-		agencys.add(new AgencyDto(4, "¼Ò¼Ó ÀÌ¸§4"));
-		agencys.add(new AgencyDto(5, "¼Ò¼Ó ÀÌ¸§5"));
+		agencys.add(new AgencyDto(1, "ï¿½Ò¼ï¿½ ï¿½Ì¸ï¿½1"));
+		agencys.add(new AgencyDto(2, "ï¿½Ò¼ï¿½ ï¿½Ì¸ï¿½2"));
+		agencys.add(new AgencyDto(3, "ï¿½Ò¼ï¿½ ï¿½Ì¸ï¿½3"));
+		agencys.add(new AgencyDto(4, "ï¿½Ò¼ï¿½ ï¿½Ì¸ï¿½4"));
+		agencys.add(new AgencyDto(5, "ï¿½Ò¼ï¿½ ï¿½Ì¸ï¿½5"));
 	}
 	
 	public List<EvaluationDto> getAllEvaluation() {
@@ -53,4 +53,54 @@ public class ContentDao {
 	public List<AgencyDto> getAllAgency() {
 		return agencys;
 	}
+	
+	public List<AgencyDto> getAgencyById(int agencyId) {
+		return null;
+	}
+
+	public List<EvaluationDto> getEvaluationById(String evaluationId) {
+		return null;
+	}
+
+	public List<SubjectDto> getSubjectById(String subjectId) {
+		return null;
+	}
+
+	public List<AgencyDto> insertAgency(AgencyDto dto) {
+		return null;
+	}
+
+	public List<EvaluationDto> insertEvaluation(EvaluationDto dto) {
+		return null;
+	}
+	
+	public List<SubjectDto> insertSubject(SubjectDto dto) {
+		return null;
+	}
+	
+	public List<AgencyDto> updateAgency(int agencyId, AgencyDto dto) {
+		return null;
+	}
+
+	public List<EvaluationDto> updateEvaluation(String evaluationId, EvaluationDto dto) {
+		return null;
+	}
+
+	public List<SubjectDto> updateSubject(String subjectId, SubjectDto dto) {
+		return null;
+	}
+
+	public List<AgencyDto> deleteAgency(int agencyId) {
+		return null;
+	}
+
+	public List<EvaluationDto> deleteEvaluation(String evaluationId) {
+		return null;
+	}
+
+	public List<SubjectDto> deleteSubject(String subjectId) {
+		return null;
+	}
+
+	
 }
