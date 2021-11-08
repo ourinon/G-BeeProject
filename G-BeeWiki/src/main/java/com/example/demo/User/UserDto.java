@@ -1,44 +1,40 @@
 package com.example.demo.User;
 
 public class UserDto {
-	private int userSeq;
-	private String email;
-	private String userId;
-	private String userPassword;
-	private String userNikname;
-	
-	public UserDto(int userSeq, String email, String userId, String userPassword, String userNikname) {
-		this.userSeq = userSeq;
-		this.email = email;
-		this.userId = userId;
+	 String userNumber, userEmail, userPassword, userNickname, userName;
+
+	 public UserDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public UserDto(String userNumber, String userEmail, String userPassword, String userNickname, String userName) {
+		this.userNumber = userNumber;
+		this.userEmail = userEmail;
 		this.userPassword = userPassword;
-		this.userNikname = userNikname;
-	}
-	
-	public UserDto() {}
-
-	public int getUserSeq() {
-		return userSeq;
+		this.userNickname = userNickname;
+		this.userName = userName;
 	}
 
-	public void setUserSeq(int userSeq) {
-		this.userSeq = userSeq;
+	@Override
+	public String toString() {
+		return "[userNumber=" + userNumber + ", userEmail=" + userEmail + ", userPassword=" + userPassword
+				+ ", userNickname=" + userNickname + ", userName=" + userName + "]";
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserNumber() {
+		return userNumber;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserNumber(String userNumber) {
+		this.userNumber = userNumber;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
 	public String getUserPassword() {
@@ -49,15 +45,19 @@ public class UserDto {
 		this.userPassword = userPassword;
 	}
 
-	public String getUserNikname() {
-		return userNikname;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserNikname(String userNikname) {
-		this.userNikname = userNikname;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
 	}
-	
-	
-	
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 }

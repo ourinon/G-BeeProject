@@ -15,31 +15,31 @@ public class ContentDao {
 	static {
 		evals = new ArrayList();
 		
-		evals.add(new EvaluationDto(1, "����1"));
-		evals.add(new EvaluationDto(2, "����2"));
-		evals.add(new EvaluationDto(3, "����3"));
-		evals.add(new EvaluationDto(4, "����4"));
-		evals.add(new EvaluationDto(5, "����5"));
+		evals.add(new EvaluationDto("평가항목 1", "설명1"));
+		evals.add(new EvaluationDto("평가항목 2", "설명2"));
+		evals.add(new EvaluationDto("평가항목 3", "설명3"));
+		evals.add(new EvaluationDto("평가항목 4", "설명4"));
+		evals.add(new EvaluationDto("평가항목 5", "설명5"));
 	}
 	
 	static {
 		subjects = new ArrayList();
 		
-		subjects.add(new SubjectDto("���� �̸�1", "���񳻿�1"));
-		subjects.add(new SubjectDto("���� �̸�2", "���񳻿�2"));
-		subjects.add(new SubjectDto("���� �̸�3", "���񳻿�3"));
-		subjects.add(new SubjectDto("���� �̸�4", "���񳻿�4"));
-		subjects.add(new SubjectDto("���� �̸�5", "���񳻿�5"));
+		subjects.add(new SubjectDto("과목명 1", "과목설명 1"));
+		subjects.add(new SubjectDto("과목명 2", "과목설명 2"));
+		subjects.add(new SubjectDto("과목명 3", "과목설명 3"));
+		subjects.add(new SubjectDto("과목명 4", "과목설명 4"));
+		subjects.add(new SubjectDto("과목명 5", "과목설명 5"));
 	}
 	
 	static {
 		agencys = new ArrayList();
 		
-		agencys.add(new AgencyDto(1, "�Ҽ� �̸�1"));
-		agencys.add(new AgencyDto(2, "�Ҽ� �̸�2"));
-		agencys.add(new AgencyDto(3, "�Ҽ� �̸�3"));
-		agencys.add(new AgencyDto(4, "�Ҽ� �̸�4"));
-		agencys.add(new AgencyDto(5, "�Ҽ� �̸�5"));
+		agencys.add(new AgencyDto(1, "기관명 1", "로고 1"));
+		agencys.add(new AgencyDto(2, "기관명 2", "로고 2"));
+		agencys.add(new AgencyDto(3, "기관명 3", "로고 3"));
+		agencys.add(new AgencyDto(4, "기관명 4", "로고 4"));
+		agencys.add(new AgencyDto(5, "기관명 5", "로고 5"));
 	}
 	
 	public List<EvaluationDto> getAllEvaluation() {

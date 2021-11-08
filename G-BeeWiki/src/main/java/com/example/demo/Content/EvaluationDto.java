@@ -1,21 +1,21 @@
 package com.example.demo.Content;
 
 public class EvaluationDto {
-	private int EvalSeq;
+	private String EvalSeq;
 	private String EvalContent;
 	
-	public EvaluationDto(int evalSeq, String evalContent) {
+	public EvaluationDto(String evalSeq, String evalContent) {
 		EvalSeq = evalSeq;
 		EvalContent = evalContent;
 	}
 	
 	public EvaluationDto() {}
 
-	public int getEvalSeq() {
+	public String getEvalSeq() {
 		return EvalSeq;
 	}
 
-	public void setEvalSeq(int evalSeq) {
+	public void setEvalSeq(String evalSeq) {
 		EvalSeq = evalSeq;
 	}
 

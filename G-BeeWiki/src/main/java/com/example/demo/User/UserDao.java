@@ -3,44 +3,71 @@ package com.example.demo.User;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-
-// Mybatis Oracle ¿¬µ¿½Ã @Mapper·Î ¿¬µ¿
-// ½ºÇÁ¸µ ¼³Á¤ÆÄÀÏ¿¡ Oracle °èÁ¤ ¿¬µ¿
-// pom.xml¿¡ oracle driver, mybatis <dependency> ¿¡ Ãß°¡
 public class UserDao {
 	
-	public static List<UserDto> users;
-	public static List<TeacherDto> teachers;
-	
-	static {
-		users = new ArrayList();
-		
-		users.add(new UserDto(1, "ÀÌ¸ŞÀÏ1", "¾ÆÀÌµğ1", "ºñ¹Ğ¹øÈ£1", "´Ğ³×ÀÓ1"));
-		users.add(new UserDto(2, "ÀÌ¸ŞÀÏ2", "¾ÆÀÌµğ2", "ºñ¹Ğ¹øÈ£2", "´Ğ³×ÀÓ2"));
-		users.add(new UserDto(3, "ÀÌ¸ŞÀÏ3", "¾ÆÀÌµğ3", "ºñ¹Ğ¹øÈ£3", "´Ğ³×ÀÓ3"));
-		users.add(new UserDto(4, "ÀÌ¸ŞÀÏ4", "¾ÆÀÌµğ4", "ºñ¹Ğ¹øÈ£4", "´Ğ³×ÀÓ4"));
-		users.add(new UserDto(5, "ÀÌ¸ŞÀÏ5", "¾ÆÀÌµğ5", "ºñ¹Ğ¹øÈ£5", "´Ğ³×ÀÓ5"));
-	}
-	
-	static {
-		teachers = new ArrayList();
-		
-		teachers.add(new TeacherDto(1, "¼Ò¼Ó1"));
-		teachers.add(new TeacherDto(2, "¼Ò¼Ó2"));
-		teachers.add(new TeacherDto(3, "¼Ò¼Ó3"));
-		teachers.add(new TeacherDto(4, "¼Ò¼Ó4"));
-		teachers.add(new TeacherDto(5, "¼Ò¼Ó5"));
-	}
-	
-	public List<UserDto> getAllusers() {
-		return users;
-	}
-	
-	public List<TeacherDto> getAllTeachers() {
-		return teachers;
-	}
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+ 
+    // Select all user.
+    public List<UserDto> getAllUsers() {
+    	String sql = "select lpad(mm_number, 4, '0') as userNumber, mm_email as userEmail, mm_pw as userPassword, mm_nickname as userNickname, mm_name as userName from MEMBER";
+    	List<UserDto> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<UserDto>( UserDto.class ));
+        return list;
+    }
+    
 
+    public UserDto getUserByUserId(String userId) {
+        return getAllUsers()
+                .stream()
+                .filter(user -> user.getUserEmail().equals(userId))
+                .findAny()
+                .orElse(new UserDto());
+    }
+ 
+    // Insert User
+    public UserDto insertUser(UserDto user) {
+    	String sql = "insert into member(mm_number, mm_email, mm_pw, mm_nickname, mm_name) values(mm_num.nextval, ?, ?, ?, ?)";
+    	jdbcTemplate.update(sql, user.getUserEmail(), user.getUserPassword(), user.getUserName(), user.getUserNickname());
+        return user;
+    }
+    
+    //Modify PassWord
+    public void updateUserPW(String userId, UserDto user) {
+    	String sql = "update member set mm_pw = ? where mm_email = ?";
+    	jdbcTemplate.update(sql, user.getUserPassword(), userId);
+    }
+ 
+    // Modify User
+    public void updateUser(String userId,UserDto user) {
+    	String sql = "update member set values(100,  ?, 'email', ?, ?, ?, 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png', 0) where mm_email = ?";
+    	jdbcTemplate.update(sql, user.getUserEmail(), user.getUserPassword(), user.getUserName(), user.getUserNickname(), userId);
+    }
+ 
+    // Delete User
+    public void deleteUser(String userId) {
+    	String sql = "delete from member where mm_email = ?";
+    	jdbcTemplate.update(sql, userId);
+    }
+    
+    //íšŒì› ë§¤ì¹­ê¸°ëŠ¥
+    public UserDto matchingUser(UserDto user) {
+    	return getAllUsers()
+                .stream()
+                .filter((users) -> users.getUserEmail().equals(user.getUserEmail()) &&
+                				 users.getUserPassword().equals(user.getUserPassword()))
+                .findAny()
+                .orElse(new UserDto("","","","",""));
+    }
+
+
+	public List<TeacherDto> getAllTeachers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

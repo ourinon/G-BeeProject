@@ -1,20 +1,34 @@
 package com.example.demo.Android;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.User.UserDao;
+import com.example.demo.User.UserDto;
+import com.example.demo.User.UserService;
+import com.example.demo.User.UserServiceImpl;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 
 @RestController
 @RequestMapping("/android")
 public class AndroidController {
 	
-	@PostMapping("")
+	@Autowired
+	private UserDao userDao;
+	
+	
+	@PostMapping("") // 안드로이드에서 스프링으로 값이 제대로 넘어왔나 확인하는 과정
 	public String androidPage(HttpServletRequest request, Model model) {
 		System.out.println("서버에서 안드로이드 접속 요청함~!");
 		try {
@@ -23,20 +37,59 @@ public class AndroidController {
 			String androidPW = request.getParameter("pw");
 			System.out.println("안드로이드에서 받아온 아이디 : " + androidID);
 			System.out.println("안드로이드에서 받아온 비밀번호 : " + androidPW);
-			model.addAttribute("android", androidID);
 			
-			return "android";
+			return androidID;
+
 			
 		}catch (Exception e) {
-			System.out.println("뭔가 이상함..");
 			e.printStackTrace();
 			return "null";
 		}
 	}
 	
-	@GetMapping("/getAndroid")
-	public String androidGet() {
-		return "android";
+	@PostMapping("/register")
+	public UserDto androidRegister(HttpServletRequest request, UserDto dto) {
+		String androidID = request.getParameter("id");
+		String androidPW = request.getParameter("pw");
+		String androidNick = request.getParameter("nickname");
+		String androidName = request.getParameter("name");
+		
+		System.out.println("안드로이드에서 받아온 아이디 : " + androidID);
+		System.out.println("안드로이드에서 받아온 비밀번호 : " + androidPW);
+		System.out.println("안드로이드에서 받아온 닉네임 : " + androidNick);
+		System.out.println("안드로이드에서 받아온 이름 : " + androidName);
+		
+		dto = new UserDto("",androidID, androidPW, androidNick, androidName);
+		
+		userDao.insertUser(dto);
+		
+		// String으로 받아온 ID, PW, Nick, Name를 UserDto로 담아서 보내준다
+		return null;
+
 	}
+	
+	@PostMapping("/login")
+	public UserDto androidLogin(HttpServletRequest request, UserDto dto) {
+		String androidID = request.getParameter("id");
+		String androidPW = request.getParameter("pw");
+		
+		System.out.println("안드로이드에서 받아온 아이디 : " + androidID);
+		System.out.println("안드로이드에서 받아온 비밀번호 : " + androidPW);
+		
+		dto = new UserDto("", androidID, androidPW,"?","?");
+		
+		System.out.println(userDao.matchingUser(dto));
+		
+
+		
+		/* userDao.matchingUser(dto); */
+		
+		// String으로 받아온 ID, PW를 UserDto로 담아서 보내준다
+
+		return dto;
+	}
+
+
+	
 
 }

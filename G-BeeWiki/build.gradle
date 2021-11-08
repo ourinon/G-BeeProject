@@ -4,37 +4,21 @@ plugins {
 	id 'java'
 }
 
-
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
+sourceCompatibility = '8'
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	 
-	
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	
-	//jsp
-	implementation "javax.servlet:jstl"
-	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
-	
 }
-
 
 test {
 	useJUnitPlatform()
