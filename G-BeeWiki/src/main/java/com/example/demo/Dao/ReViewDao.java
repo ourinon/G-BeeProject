@@ -1,10 +1,12 @@
-package com.example.demo.ReView;
+package com.example.demo.Dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.Dto.ReViewDto;
 
 @Repository
 public class ReViewDao {

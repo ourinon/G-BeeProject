@@ -1,4 +1,4 @@
-package com.example.demo.ReView;
+package com.example.demo.Controller;
 
 import java.util.List;
 
@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.Dto.ReViewDto;
+import com.example.demo.ServiceImpl.ReViewServiceImpl;
 
 @RestController
 @RequestMapping("/review")

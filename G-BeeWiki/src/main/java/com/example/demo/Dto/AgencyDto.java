@@ -1,14 +1,12 @@
-package com.example.demo.Content;
+package com.example.demo.Dto;
 
 public class AgencyDto {
 	private int agencySeq;
 	private String agencyName;
-	private String agencyLogo;
 	
-	public AgencyDto(int agencySeq, String agencyName, String agencyLogo) {
+	public AgencyDto(int agencySeq, String agencyName) {
 		this.agencySeq = agencySeq;
 		this.agencyName = agencyName;
-		this.agencyLogo = agencyLogo;
 	}
 	
 	public AgencyDto() {}
@@ -27,14 +25,6 @@ public class AgencyDto {
 
 	public void setAgencyName(String agencyName) {
 		this.agencyName = agencyName;
-	}
-
-	public String getAgencyLogo() {
-		return agencyLogo;
-	}
-
-	public void setAgencyLogo(String agencyLogo) {
-		this.agencyLogo = agencyLogo;
 	}
 	
 	

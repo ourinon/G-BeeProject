@@ -1,4 +1,4 @@
-package com.example.demo.Content;
+package com.example.demo.Dto;
 
 public class EvaluationDto {
 	private String EvalSeq;

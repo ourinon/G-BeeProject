@@ -1,4 +1,4 @@
-package com.example.demo.Android;
+package com.example.demo.Controller;
 
 import java.util.List;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.User.UserDao;
-import com.example.demo.User.UserDto;
-import com.example.demo.User.UserService;
-import com.example.demo.User.UserServiceImpl;
+import com.example.demo.Dao.UserDao;
+import com.example.demo.Dto.UserDto;
+import com.example.demo.Service.UserService;
+import com.example.demo.ServiceImpl.UserServiceImpl;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
 @RestController
@@ -59,7 +59,7 @@ public class AndroidController {
 		System.out.println("안드로이드에서 받아온 닉네임 : " + androidNick);
 		System.out.println("안드로이드에서 받아온 이름 : " + androidName);
 		
-		dto = new UserDto("",androidID, androidPW, androidNick, androidName);
+		dto = new UserDto("",androidID,"", androidPW, androidName, androidNick,"",0);
 		
 		userDao.insertUser(dto);
 		
@@ -76,7 +76,7 @@ public class AndroidController {
 		System.out.println("안드로이드에서 받아온 아이디 : " + androidID);
 		System.out.println("안드로이드에서 받아온 비밀번호 : " + androidPW);
 		
-		dto = new UserDto("", androidID, androidPW,"?","?");
+		dto = new UserDto("", androidID,"", androidPW,"","","",0);
 		
 		System.out.println(userDao.matchingUser(dto));
 		

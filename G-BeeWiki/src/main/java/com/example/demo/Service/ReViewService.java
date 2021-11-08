@@ -1,8 +1,10 @@
-package com.example.demo.ReView;
+package com.example.demo.Service;
 
 import java.util.List;
 
 import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.Dto.ReViewDto;
 
 public interface ReViewService {
 	

@@ -1,6 +1,10 @@
-package com.example.demo.Content;
+package com.example.demo.Service;
 
 import java.util.List;
+
+import com.example.demo.Dto.AgencyDto;
+import com.example.demo.Dto.EvaluationDto;
+import com.example.demo.Dto.SubjectDto;
 
 public interface ContentService {
 	

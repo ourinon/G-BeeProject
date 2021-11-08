@@ -1,4 +1,4 @@
-package com.example.demo.ReView;
+package com.example.demo.Dto;
 
 public class ReViewDto {
 	private int reviewSeq;

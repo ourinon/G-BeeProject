@@ -1,4 +1,4 @@
-package com.example.demo.Content;
+package com.example.demo.Dto;
 
 public class SubjectDto {
 	private String SubjectName;

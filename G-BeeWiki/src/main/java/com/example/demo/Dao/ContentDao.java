@@ -1,9 +1,13 @@
-package com.example.demo.Content;
+package com.example.demo.Dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+
+import com.example.demo.Dto.AgencyDto;
+import com.example.demo.Dto.EvaluationDto;
+import com.example.demo.Dto.SubjectDto;
 
 @Repository
 public class ContentDao {
@@ -35,11 +39,11 @@ public class ContentDao {
 	static {
 		agencys = new ArrayList();
 		
-		agencys.add(new AgencyDto(1, "기관명 1", "로고 1"));
-		agencys.add(new AgencyDto(2, "기관명 2", "로고 2"));
-		agencys.add(new AgencyDto(3, "기관명 3", "로고 3"));
-		agencys.add(new AgencyDto(4, "기관명 4", "로고 4"));
-		agencys.add(new AgencyDto(5, "기관명 5", "로고 5"));
+		agencys.add(new AgencyDto(1, "기관명 1"));
+		agencys.add(new AgencyDto(2, "기관명 2"));
+		agencys.add(new AgencyDto(3, "기관명 3"));
+		agencys.add(new AgencyDto(4, "기관명 4"));
+		agencys.add(new AgencyDto(5, "기관명 5"));
 	}
 	
 	public List<EvaluationDto> getAllEvaluation() {
